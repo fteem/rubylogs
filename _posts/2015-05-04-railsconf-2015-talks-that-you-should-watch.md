@@ -13,7 +13,7 @@ Recently Confreaks uploaded a ton of RailsConf 2015 talks on Youtube. Although 
 
 In this talk, Jillian Foley talks about refactoring. She shares some techniques about how to approach code that you haven't written and how to easily refactor it.
 
-{% youtube HFaXuMQTnOc %}
+<iframe width="853" height="480" src="https://www.youtube.com/embed/HFaXuMQTnOc?rel=0" frameborder="0" allowfullscreen></iframe>
 
 ## Nothing is Something
 
@@ -21,7 +21,7 @@ In this talk, Jillian Foley talks about refactoring. She shares some techniques 
 
 The great Sandi Metz talks about how our code hides concepts/knowledge away from us. Her examples are awesome and her explanation of the NullObject pattern and OOD in general is awesome, as always.
 
-{% youtube OMPfEXIlTVE %}
+<iframe width="853" height="480" src="https://www.youtube.com/embed/OMPfEXIlTVE?rel=0" frameborder="0" allowfullscreen></iframe>
 
 ## Don't Be A Hero: Sustainable Open Source
 
@@ -29,7 +29,7 @@ The great Sandi Metz talks about how our code hides concepts/knowledge away from
 
 Lillie Chilen talks about the pain points of maintaining open source projects, how to improve the experience and how to onboard new contributors.
 
-{% youtube KpMC8z8r73g %}
+<iframe width="853" height="480" src="https://www.youtube.com/embed/KpMC8z8r73g?rel=0" frameborder="0" allowfullscreen></iframe>
 
 ## Opening Keynote
 
@@ -37,7 +37,7 @@ Lillie Chilen talks about the pain points of maintaining open source projects, h
 
 DHH talks about the motivation behind the built in, slimmed down, API Rails generator, then continues about Turbolinks 3 and the newest addition to Rails - ActionCable.
 
-{% youtube KJVTM7mE1Cc %}
+<iframe width="853" height="480" src="https://www.youtube.com/embed/KJVTM7mE1Cc?rel=0" frameborder="0" allowfullscreen></iframe>
 
 ## Keynote
 
@@ -45,7 +45,7 @@ DHH talks about the motivation behind the built in, slimmed down, API Rails gene
 
 Man... he starts off by reading puns from his Twitter timeline. Then goes on to boot his XP machine and opens his slides written with ComicSans. Everything is awesome about Aaron's keynote.
 
-{% youtube B3gYklsN9uc %}
+<iframe width="853" height="480" src="https://www.youtube.com/embed/B3gYklsN9uc?rel=0" frameborder="0" allowfullscreen></iframe>
 
 ## Closing Keynote
 
@@ -53,8 +53,7 @@ Man... he starts off by reading puns from his Twitter timeline. Then goes on to 
 
 Beautiful talk by Kent Beck about what he learned in his career as a software developer, his habits that he has developed and what he aims for everyday in his day-to-day job.
 
-{% youtube aApmOZwdPqA %}
-
+<iframe width="853" height="480" src="https://www.youtube.com/embed/aApmOZwdPqA?rel=0" frameborder="0" allowfullscreen></iframe>
 
 <br/> <br/> <br/>
 You think I missed an awesome talk in this list? Or maybe, you want to share your favourite talks from RailsConf 2015? Please leave a comment!
