@@ -1,50 +1,47 @@
 # SITE CONFIGURATION
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://example.com" # the base hostname & protocol for your site
+url: "http://rubylogs.com" # the base hostname & protocol for your site
 
 # THEME-SPECIFIC CONFIGURATION
 theme:
   # Meta
-  title: Type Theme
-  avatar: avatar.png
+  title: Ruby/Logs
+  avatar: avatar.svg
   gravatar: # Email MD5 hash
-  description: "A website with blog posts and pages" # used by search engines
+  description: "Ruby, Rails, Open Source and everything in-between." # used by search engines
 
   # Header and footer text
-  header_text: >
-     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-     <p>Remove all header text in <code>_config.yml</code> to disable this feature.</p>
+  header_text:
   header_text_feature_image:
   footer_text: >
-   Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
+   <a href="/about">Read more</a> about Ruby/Logs. Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
 
   # Icons
-  rss: false
-  email_address: # Full email address, e.g. "sam@example.com"
+  rss: true
+  email_address: "ileeftimov+rubylogs@gmail.com"
   behance:
   bitbucket:
   dribbble:
   facebook:
   flickr:
-  github: "rohanchandra/type-theme"
+  github: "fteem"
   google_plus:
   instagram:
-  linkedin:  # Full URL
+  linkedin: "http://mk.linkedin.com/in/ieftimov/" # Full URL
   pinterest:
   reddit:
   soundcloud:
   stack_exchange:  # Full URL
   steam:
   tumblr:
-  twitter: "twitter"
+  twitter: "fteem"
   wordpress:
   youtube:
 
   # Scripts
   google_analytics: # Tracking ID, e.g. "UA-000000-01"
-  disqus_shortname:
-  katex: true # Enable if using math markup
+  disqus_shortname: "rubylogs"
+  katex: false # Enable if using math markup
 
   # Localization strings
   str_follow_on: "Follow on"
@@ -58,8 +55,10 @@ theme:
   # Open the "_sass > base" folder, and open "_variables.scss"
 
 # PAGINATION
-paginate: 5
-paginate_path: "blog/page:num"
+paginate: 10
+paginate_path: "page:num"
+
+permalink: :title
 
 # BUILD SETTINGS
 markdown: kramdown

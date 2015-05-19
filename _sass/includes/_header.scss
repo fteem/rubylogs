@@ -26,7 +26,28 @@
     line-height: 1.5;
   }
 
+  .special-link {
+    color: #c60f1b;
+    float: left;
+    font-size: 0px;
+    margin: 7px 0 0 15px;
+    opacity: 0;
+    transition: opacity 2s linear;
+  }
+
+  .branding {
+    display: inline-block;
+  }
+
+  .branding:hover > .special-link {
+    font-size: 14px;
+    opacity: 0.8;
+    transition: opacity 0.6s linear;
+  }
+
   .site-nav {
+    float: right;
+
     ul {
       margin: 0;
       padding: 0;
