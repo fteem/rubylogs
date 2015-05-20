@@ -2,8 +2,13 @@
 	<meta charset="utf-8">
 	<title>{% if page.title %}{{ page.title }} |{% endif %} {{ site.theme.title }}</title>
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.theme.description }}{% endif %}">
+	<meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.theme.description }}{% endif %}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-Frame-Options" content="sameorigin">
+	<meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+	<meta property="og:type" content="article" />
+	<meta property="article:author" content="Ile Eftimov" />
+	<meta property="article:publisher" content="{{ site.url }}" />
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
