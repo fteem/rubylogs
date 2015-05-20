@@ -39,7 +39,7 @@ theme:
   youtube:
 
   # Scripts
-  google_analytics: # Tracking ID, e.g. "UA-000000-01"
+  google_analytics: "UA-11264459-3"
   disqus_shortname: "rubylogs"
   katex: false # Enable if using math markup
 
