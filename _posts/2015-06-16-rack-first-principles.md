@@ -4,9 +4,9 @@ title: "Rack: First Principles"
 tags: [ruby, rack]
 ---
 
-About three years ago, when I started working with Ruby and Rails, when googlging or
-reading StackOverflow questions, the term "Rack" always came up.
-Overwhelmed with all of the stuff I needed to learn and the awesomeness of Rails, that
+About three years ago, when I started working with Ruby and Rails, I noticed that
+the term "Rack" always came up in my Google searches.
+Overwhelmed with all of the stuff I needed to learn combined with the awesomeness of Rails, which
 shields the new Rails devs from it's internals, I never really understood Rack or
 writing Rack apps. Although I used to see people mentioning "middleware" or "Rack middleware"
 I never really wrote (or tried to write) any middleware. But, you know what's really funny?
