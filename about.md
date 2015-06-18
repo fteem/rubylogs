@@ -9,13 +9,12 @@ special: true
 
 My name is Ilija Eftimov, but you can call me Ile. Everyone does.
 
-This is my blog about Ruby, Rails, JavaScript and (sometimes) life in general.
+This is my blog about Ruby, Rails, JavaScript and, sometimes, life in general.
 
-I am a Ruby on Rails developer living in [Republic Of Macedonia](https://en.wikipedia.org/wiki/Republic_of_Macedonia).
+I am a full-stack Ruby on Rails developer, working for [Siyelo](http://siyelo.com){:target="_blank"}.
 
-
-I am an author of [couple of tiny Ruby gems](https://rubygems.org/profiles/fteem), I am one of the organizers of Rails Girls in Macedonia
-and I am a part-time programming tutor.
+In my spare time, I am an author of [couple of tiny Ruby gems](https://rubygems.org/profiles/fteem), 
+I am one of the organizers of Rails Girls in Macedonia and I am a part-time programming tutor.
 
 You can find me on <a target="_blank" href="https://twitter.com/{{site.theme.twitter}}">Twitter</a>,
 <a target="_blank" href="https://github.com/{{site.theme.github}}">GitHub</a>
