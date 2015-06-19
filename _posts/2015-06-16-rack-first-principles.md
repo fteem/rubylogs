@@ -17,6 +17,9 @@ take a look at Rack from first principles.
 
 ## What is Rack?
 
+Wait, isn't it Rake, not Rack? Nope, [Rake](https://github.com/ruby/rake) is "Make for Ruby" and
+it's basically a task runner. On the other hand Rack is something else.
+
 Taken from [Rack's documentation](http://www.rubydoc.info/github/rack/rack/master/file/README.rdoc){:target='_blank'}:
 
 <cite>
@@ -53,7 +56,7 @@ in when receiving the response from the server:
 
 * the status - did the request fail, or was it ok
 * the headers - [HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers){:target='_blank'}. Rarely mentioned, but they are great!
-* the body - the useful stuff that the server returns (usually a HTTP page or JSON paylod)
+* the body - the useful stuff that the server returns (usually a HTTP page or JSON payload)
 
 Makes sense, right?
 
@@ -163,3 +166,8 @@ we will take a look at writing Rack middleware and integrating it into a Rails a
 Until than, feel free to share your thoughts on Rack with me and the ways you use it.
 Also, I am looking for suggestions for the middleware example for the next post -
 what kind of middleware would you like to me to cover?
+
+
+Update 1 (2015-06-19): Thanks to [BlazeBoy](https://disqus.com/by/BlazeBoy/) for the Rack vs Rake suggestion. Thanks to [André](https://disqus.com/by/andresilveirah/) for noticing a typo.  
+
+
