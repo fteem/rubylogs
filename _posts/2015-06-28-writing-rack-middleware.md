@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Rack: Middleware"
+title: "Rack: Writing middleware"
 tags: [ruby, rack, middleware]
 ---
 
