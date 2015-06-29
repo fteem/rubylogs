@@ -147,10 +147,13 @@ class Loggster
   end
 
   def call env
+    start_time = Time.now
     status, headers, body = @app.call env
+    end_time = Time.now
+
     Dir.mkdir('logs') unless File.directory?('logs')
     File.open('logs/server.log', 'a+') do |f|
-      f.write("[#{Time.now}] \"#{env['REQUEST_METHOD']} #{env['PATH_INFO']}\" #{status}\n")
+      f.write("[#{Time.now}] \"#{env['REQUEST_METHOD']} #{env['PATH_INFO']}\" #{status} Delta: #{end_time - start_time}s \n")
     end
 
     [status, headers, body]
@@ -181,9 +184,9 @@ If we run this file with ```rackup loggster.ru``` and visit the URL, we'll see t
 
 {% highlight bash %}
 ➜ cat logs/server.log
-[2015-06-27 01:24:37 +0200] "GET /something" 200
-[2015-06-27 01:24:37 +0200] "GET /favicon.ico" 200
-[2015-06-27 01:24:37 +0200] "GET /favicon.ico" 200
+[2015-06-27 01:24:37 +0200] "GET /something" 200 Delta: 1.3s
+[2015-06-27 01:24:37 +0200] "GET /favicon.ico" 200 Delta: 0.3s
+[2015-06-27 01:24:37 +0200] "GET /favicon.ico" 200 Delta: 0.2s
 {% endhighlight %}
 
 As you can see, I requested ```localhost:<port-number>/something``` via my browser. The browser requested the path 
