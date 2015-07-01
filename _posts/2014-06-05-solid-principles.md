@@ -226,7 +226,7 @@ student = Student.new
 
 # What LSP says is if I know the interface of person, I need to be able to guess the interface of student because
 # the Student class is a subtype of the Person class.
-student.hello
+student.greet
 # returns "Hey there!"
 {% endhighlight %}
 
