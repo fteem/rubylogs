@@ -62,7 +62,8 @@ class MiddlewareTwo
 
   def call(env)
     puts "MiddlewareTwo reporting in!"
-    puts "Got nothing to do..."
+    puts "The app is: #{@app}"
+    puts "The has the methods: #{@app.methods - Object.methods}"
     status, headers, body = @app.call(env)
     [status, headers, body]
   end
@@ -109,7 +110,7 @@ message. But the server logs are what we are interested in:
 
 {% highlight bash %}
 MiddlewareTwo reporting in!
-The app is: #<MiddlewareOne:0x007fac6a019eb0>
+The app is: #<MiddlewareOne:0x007fbcdb111f08>
 The has the methods: [:call]
 MiddlewareOne reporting in!
 The app is: HandlerClass
