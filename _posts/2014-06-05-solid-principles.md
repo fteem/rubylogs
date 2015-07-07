@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "SOLID Principles in Ruby"
-published: true
 ---
 
 Regardless of your knowledge level, as a programmer you love to write awesome code. It's what we do. We like it and we do it every single day.

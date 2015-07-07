@@ -3,8 +3,6 @@ layout: post
 title: "AngularJS Services Part 4: Value and Constant"
 category: articles
 tags: [angularjs, google, javascript, service]
-featured_image: /images/cover1.jpg
-published: true
 ---
 
 So far we saw the magic of creating AngularJS services using

@@ -3,7 +3,6 @@ layout: post
 title: "When to use scaffolding in Rails?"
 tags: [ruby, rails, scaffolding]
 featured_image: /images/cover1.jpg
-published: true
 ---
 
 Having about 2.5 years of experience with Ruby on Rails, I finally got the chance

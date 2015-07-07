@@ -2,8 +2,6 @@
 layout: post
 title: "Using multiple sources in a Gemfile"
 tags: [angularjs, google, javascript]
-featured_image: /images/cover1.jpg
-published: true
 ---
 
 Gemfiles require at least one gem source, in the form of the URL for a RubyGems server. Although it's not recommended, it's possible as of Bundler 1.7, to add multiple global `source` lines. Each of these sources has to be a valid Rubygems repository.

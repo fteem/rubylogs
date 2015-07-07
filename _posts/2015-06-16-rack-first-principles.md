@@ -2,7 +2,6 @@
 layout: post
 title: "Rack: First Principles"
 tags: [ruby, rack]
-published: true
 ---
 
 About three years ago, when I started working with Ruby and Rails, I noticed that

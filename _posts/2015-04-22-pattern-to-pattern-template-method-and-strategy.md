@@ -2,8 +2,6 @@
 layout: post
 title: "Pattern to pattern: Template Method & Strategy"
 tags: [angularjs, google, javascript]
-featured_image: /images/cover1.jpg
-published: true
 ---
 
 Recently I wrote about the [Template Method pattern](http://rubylogs.com/template-method-pattern-in-ruby/ "Template Method Pattern in Ruby") and how it's implemented in Ruby. In the comments, one of the readers commented that the Template Method pattern is in fact the Strategy pattern. After thinking hard about how I should answer the question, I thought about writing a post comparing the two patterns. So, here it is - my version of design patterns head to head. Let's see what these two patterns have in common and what are their key differences.

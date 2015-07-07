@@ -1,10 +1,7 @@
 ---
 layout: post
 title: "AngularJS Services Part 2: Factory"
-category: articles
 tags: [angularjs, google, javascript, factory]
-featured_image: /images/cover1.jpg
-published: true
 ---
 
 If you don't know the basics of AngularJS service, I recommend you read the
