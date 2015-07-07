@@ -17,6 +17,36 @@ article {
     font-size: 0.9em;
   }
 }
+.bio-section {
+  float: left;
+  margin-top: 25px;
+  width: 100%;
+  padding: 1% 20%;
+}
+.bio-section {
+  header {
+    margin-bottom: 6%;
+    text-align: center;
+  }
+  a:hover {
+    @extend %link-hover;
+  }
+  .footnotes {
+    font-size: 0.9em;
+  }
+  p {
+    color: #586e75;
+    font-size: 0.9em;
+    width: 80%;
+    float: left;
+    padding-left: 20px;
+  }
+  .avatar {
+    border-radius: 50%;
+    height: 130px;
+    float: left;
+  }
+}
 header {
   h1 {
     margin: 0;
