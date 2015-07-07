@@ -4,6 +4,7 @@ title: "AngularJS Services Part 3: Service"
 category: articles
 tags: [angularjs, google, javascript, service]
 featured_image: /images/cover1.jpg
+published: true
 ---
 
 So, Service is basically the same as Factory, it just has one key difference.

@@ -3,6 +3,7 @@ layout: post
 title: "Exploring new methods in Ruby 2.2.0"
 tags: [angularjs, google, javascript]
 featured_image: /images/cover1.jpg
+published: true
 ---
 
 For those late to the Ruby 2.2.0 party like me, aside from the changes (and updates) the core team made under the hood for this version, they introduced couple of new methods to the _Enumerable_ module and to the_ Method, Float, File_ and _String_ classes. Lets take a look at these methods and explore how we can use them in our everyday jobs. Just a heads up, make sure you **use Ruby 2.2.0** when working on the examples.

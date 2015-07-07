@@ -4,6 +4,7 @@ title: "AngularJS Services Part 1: Provider"
 category: articles
 tags: [angularjs, google, javascript]
 featured_image: /images/cover1.jpg
+published: true
 ---
 
 I started using AngularJS couple of months ago, when [we](http://siyelo.com#team)

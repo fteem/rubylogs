@@ -3,6 +3,7 @@ layout: post
 title: "How to: YourGem.configure"
 tags: [ruby, gems, patterns]
 featured_image: /images/cover1.jpg
+published: true
 ---
 
 Really cool gems, like Carrierwave for example, have this neat feature of configuring

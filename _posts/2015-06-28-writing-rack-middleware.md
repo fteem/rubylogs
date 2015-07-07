@@ -2,6 +2,7 @@
 layout: post
 title: "Rack: Writing middleware"
 tags: [ruby, rack, middleware]
+published: true
 ---
 
 Last time I wrote about [the basics of Rack](/rack-first-principles){:target="_blank"} and

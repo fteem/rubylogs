@@ -2,6 +2,7 @@
 layout: post
 title: 'Implementing "the lovely" Singleton Pattern'
 tags: [ruby, design, patterns, singleton]
+published: true
 ---
 
 In every software, there are some things that have to be unique. For example, a Rails app has

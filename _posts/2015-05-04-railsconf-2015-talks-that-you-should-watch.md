@@ -3,6 +3,7 @@ layout: post
 title: "RailsConf 2015 talks that you should watch"
 tags: [angularjs, google, javascript]
 featured_image: /images/cover1.jpg
+published: true
 ---
 
 Recently Confreaks uploaded a ton of RailsConf 2015 talks on Youtube. Although I haven't watched all of the talks, these are some of the ones that in my opinion are very worth watching. Keep in mind that this list will grow as I watch more talks over time. So, without further ado...

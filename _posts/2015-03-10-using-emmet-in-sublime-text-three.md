@@ -4,6 +4,7 @@ title: "Using Emmet (in Sublime Text 3)"
 category: articles
 tags: [emmet, sublime, plugin]
 featured_image: /images/cover1.jpg
+published: true
 ---
 
 Front-end development is fun. Well, backend is fun too (especially with Ruby and Rails), but I feel like

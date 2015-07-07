@@ -3,6 +3,7 @@ layout: post
 title: "Template Method Pattern in Ruby"
 tags: [angularjs, google, javascript]
 featured_image: /images/cover1.jpg
+published: true
 ---
 When working as a software developer, knowledge of some design patterns is always welcomed. If you've never heard about design patterns, they are basically some general reusable patterns for common problems that developers run into. There's a big list of these and knowing all of them is a bit hard. Well, hard might not be the right word, but it takes **a lot** of practice to master them all. Lets take a look at one of the (in my opinion) easier patterns - the Template Method Pattern and implement it in Ruby.
 

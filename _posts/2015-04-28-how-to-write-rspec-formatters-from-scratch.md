@@ -3,6 +3,7 @@ layout: post
 title: "How to write RSpec formatters from scratch"
 tags: [angularjs, google, javascript]
 featured_image: /images/cover1.jpg
+published: true
 ---
 
 Recently I did an experiment with RSpec's formatters. Turns out, the output that RSpec returns when you run your specs can be very customized for your own needs. Read on to learn how you can write custom RSpec formatters.

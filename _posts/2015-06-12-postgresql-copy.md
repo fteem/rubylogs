@@ -2,6 +2,7 @@
 layout: post
 title: "In and out of PostgreSQL using COPY"
 tags: [postgres, copy, csv]
+published: true
 ---
 
 I am pretty sure everyone of us has been in a situation where you needed to

@@ -2,6 +2,7 @@
 layout: post
 title: "Test-Driven Thinking"
 tags: [testing, tdd]
+published: true
 ---
 
 
