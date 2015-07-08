@@ -389,6 +389,39 @@ If we reboot the Rails app and send a new request, the logs will show:
 
 Be aware that your output may vary because logging output relies on the [logger formatter](http://api.rubyonrails.org/classes/ActiveSupport/Logger/SimpleFormatter.html){:target="_blank"} that your application is using.
 
+If you want to see the exact same output, plug this logging formatter in your app:
+
+{% highlight ruby %}
+# lib/delta_formatter.rb
+
+class DeltaFormatter < Logger::Formatter
+  def call(severity, time, program_name, msg)
+    "[#{severity}] #{String === msg ? msg : msg.inspect}\n"
+  end
+end
+{% endhighlight %}
+
+You can use this formatter by including it into ```application.rb```:
+
+{% highlight ruby %}
+*snipped*
+require "./lib/delta_formatter"
+
+module MyApplication
+  class Application < Rails::Application
+    config.autoload_paths += %W( #{config.root}/lib/**/*)
+
+    *snipped*
+
+    config.middleware.use "DeltaLogger", :warn
+    config.log_formatter = DeltaFormatter.new
+  end
+end
+{% endhighlight %}
+
+After adding this, you'll need to reboot your server and you should see the output with
+the severity tag.
+
 ## Thread safety
 
 Last of the important topics about Rails middleware is thread-safety. When using Puma or Unicorn web servers,
