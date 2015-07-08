@@ -1,16 +1,15 @@
 ---
 layout: post
-title: "Rack: How to write Rails middleware"
+title: "How to write Rails middleware"
 tags: [rails, rack, middleware]
-draft: true
 ---
 
 In my last two posts about Rack, I wrote about [the basics of Rack](/rack-first-principles){:target="_blank"} 
 and [how to write middleware](/writing-rack-middleware){:target="_blank"}. If you 
 have no idea what this is about, I recommend reading the last two posts (in the order above). 
 For the rest of you, carry on - today we will see how to write awesome Rails middleware 
-using Rack and how to use it in any Rails application. Rails and Rack play together
-really nice, so keep on reading!
+and how to use it in any Rails application. Rails and Rack play together really nice, 
+so keep on reading!
 
 ## Rails on Rack
 
@@ -163,7 +162,7 @@ seem to be autoloaded at the end, when all of the constants are present in memor
 
 ### Mounting the middleware in the stack
 
-Adding our middleware at a certain point of the middleware stack is doable via 
+Adding our middleware at a certain point of the middleware stack is done via 
 the ```insert_before``` and ```insert_after``` commands. 
 
 For example, if we, for whatever reason, want to add our ```MyMiddleware``` class 
@@ -214,7 +213,8 @@ and log it to the Rails console. You can open any Rails application that you hav
 laying in your computer and play with it. I promise we won't do anything malicious. :-)
 
 First, we need a middleware class. Lets add it to the ```app/middleware``` directory. 
-It's worth mentioning that if the directory is missing - feel free to create it.
+It's worth mentioning that the directory does not exist by default. 
+So, if it is missing - feel free to create it.
 
 Next, we'll need to add the ```initialize``` and the ```call``` method. Remember, the first
 argument of the ```initialize``` method is the application, and the first argument of the ```call``` method
@@ -389,7 +389,7 @@ If we reboot the Rails app and send a new request, the logs will show:
 
 Be aware that your output may vary because logging output relies on the [logger formatter](http://api.rubyonrails.org/classes/ActiveSupport/Logger/SimpleFormatter.html){:target="_blank"} that your application is using.
 
-If you want to see the exact same output, plug this logging formatter in your app:
+If you are not seeing the exact output, you can plug this logging formatter in your app:
 
 {% highlight ruby %}
 # lib/delta_formatter.rb
@@ -441,7 +441,8 @@ VALID_LOG_LEVELS = [:debug, :info, :warn, :error, :fatal, :unknown]
 class DeltaLogger
   def initialize app, log_level
     @app = app
-    @log_level = VALID_LOG_LEVELS.include?(log_level) ? log_level : :info # Default to :info log level if the user sets an invalid log level.
+    # Default to :info log level if the user sets an invalid log level.
+    @log_level = VALID_LOG_LEVELS.include?(log_level) ? log_level : :info 
   end
 
   def call env
@@ -469,4 +470,13 @@ web server to use a separate (duped) object for each thread which will contain d
 data, based on it's execution.
 
 ## Outro
+
+As you can see, there's quite a bit that needed to be covered in this post. I hope that
+this explained how you can write your own Rails middleware and mount it in the middleware stack. 
+It's very easy to get creative with Rails middleware as it iss highly customizable, quite 
+low-level(ish) while you have the whole app available in runtime. Next time, we will work
+together on building and testing a real-life example of Rails middleware. 
+
+Until then, feel free to drop a comment, I would love to hear your opinions, problems and 
+code that you've come up with.
 
