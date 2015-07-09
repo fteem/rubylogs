@@ -77,3 +77,23 @@ header {
     @extend %padding-regular;
   }
 }
+
+.share-page {
+  text-align: left;
+  color: #c60f1b;
+  border-radius: 5px;
+  margin-top: 70px;
+
+  a {
+    i {
+      font-size: 25px;
+    }
+    margin-left: 15px;
+    color: #c60f1b;
+
+    &:hover {
+      border-bottom: 1px dashed #fff;
+      text-decoration: none;
+    }
+  }
+}
