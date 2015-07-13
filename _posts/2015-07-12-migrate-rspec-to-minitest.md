@@ -2,19 +2,19 @@
 layout: post
 title: "Migrating a test suite from RSpec to Minitest"
 tags: [ruby, testing, tdd, rspec, minitest]
-draft: true
 ---
 
 I have always wanted to have some fun with [Minitest](https://github.com/seattlerb/minitest){:target="blank"} but
 until this weekend I never got the chance to do it. For those of you that don't know,
-Minitest is a suite of testing facilities, that support TDD, BDD, mocking and benchmarking. Yeah,
-I got that from their Github repo. So anyway, since I always wanted to have some fun with it,
-I decided that I will move the test suite of a gem that I have authored in the past, 
-from RSpec to Minitest. Read on to see how it all went.
+Minitest is a suite of testing facilities, that support TDD, BDD, mocking and benchmarking. 
+Having wanted to play with Minitest, this weekend I decided that I will migrate the test 
+suite of a gem of mine, from RSpec to Minitest. Read on to see how it all went.
 
-The gem that I worked on is called [Forecastr](https://github.com/fteem/forecastr){:target="blank"}.
-It is a very minimal gem that serves as a wrapper for the [Open Weather Map](http://openweathermap.org){:target="blank"} API. 
-It supports only current forecast: temperature, pressure, humidity, min/max temperatures and wind (speed and direction).
+The gem that I worked with is called [Forecastr](https://github.com/fteem/forecastr){:target="blank"}.
+It is a very minimal gem that serves as a wrapper for the 
+[Open Weather Map](http://openweathermap.org){:target="blank"} API. 
+It supports only current forecast: temperature, pressure, humidity, min/max 
+temperatures and wind (speed and direction).
 
 ## The setup
 
@@ -25,14 +25,14 @@ changed the RSpec dependency to Minitest.
 spec.add_development_dependency "minitest"
 {% endhighlight %}
 
-Setup-wise, the first difference that I noticed is that the path of the tests should change, 
-from ```spec/forecastr``` to ```test/forecastr```. This is partially true,
-because when creating the new Rake task for running Minitest tests, you can specify the
-path where you want your tests to live.
+Setup-wise, the first difference that I noticed is that while RSpec's specs live in ```spec/forecastr```,
+Minitest's tests live in ```test/forecastr```. Although this is the default, it's 
+not the only way to do it. When creating the new Rake task for running the Minitest tests, which
+I'll get to shortly, one can specify the path where she/he wants the tests to live.
 
 In the newly created ```test/forecastr``` path, I had to add the ```test_helper.rb```. 
-This is basically the same as ```spec_helper.rb``` in RSpec. Instead of requiring 
-rspec, now I had to require:
+The purpose of the file is the same as ```spec_helper.rb``` in RSpec. Instead of requiring 
+RSpec, now I had to require:
 
 {% highlight ruby %}
 require 'minitest/unit'     # requires the unit test suite of Minitest
@@ -40,7 +40,8 @@ require 'minitest/autorun'  # the test runner
 require 'minitest/pride'    # adds some formatting to the test output
 {% endhighlight %}
 
-The last important thing was the Rake task. In the Rakefile, I had to add this:
+The last important thing was the Rake task. To run all the tests one needs to add
+a built-in Rake task to the Rakefile:
 
 {% highlight ruby %}
 require "rake/testtask"
@@ -54,16 +55,20 @@ end
 task default: :test
 {% endhighlight %}
 
-The ```Rake::TestTask``` is the task that will be called when running ```rake test```
-in command line. On the last line, I made this task to be the default one, because
-I don't really need (or run) any other tasks.
+The ```Rake::TestTask``` object is the task that will be called when running ```rake test```
+in command line. As you can see, it takes a small configuration block. In it, one can
+set the path of the tests (what I mentioned before). On the last line, I made this 
+task to be the default one, because it's more convenient for me and I don't need to 
+run any other tasks.
 
 ## The first test
 
 I started by migrating one test at a time from the spec directory to the test directory. 
 What was interesting to me is that every test file in Minitest is a class that
 inherits from ```Minitest::Test```. Also, every test case is a method, which of course
-makes sense since the test file is a class.
+makes sense since the test file is a class. In contrast to RSpec, Minitest is very
+verbose, while RSpec hides a lot of complexity for you with it's huge collection of
+helper methods.
 
 At the beginning I had a bit of problem with naming the methods because I was used
 to the "free text" way of describing test cases in RSpec. I eventually got the first one:
@@ -87,20 +92,77 @@ class Forecastr::WindTest < Minitest::Test
 end
 {% endhighlight %}
 
-What was really interesting to me is that I got really cool warnings when running the tests:
+What was interesting to me is that I got really cool warnings when running the tests:
 
 {% highlight bash %}
 /Users/ie/dev/forecastr/lib/forecastr/wind.rb:12: warning: method redefined; discarding old speed
 /Users/ie/dev/forecastr/lib/forecastr/wind.rb:16: warning: method redefined; discarding old direction
 {% endhighlight %}
 
-The reason behind these errors is that, back in the day when I was writing the Wind class, 
+The reason behind these errors is that, back in the day when I was writing the ```Wind``` class, 
 I had added ```attr_reader``` for ```speed``` and ```direction```. Although I had these
-in place, I had overwritten the methods with my own methods, so the warning was really nice. 
+in place, I had overridden the methods, so the warning was spot on. 
+
+{% highlight ruby %}
+module Forecastr
+  class Wind
+    DIRECTIONS = ["N","NNE","NE","ENE","E","ESE", "SE", "SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"]
+
+    attr_reader :speed, :direction # <--- useless...
+
+    def initialize(speed, angle)
+      @speed = speed
+      @angle = angle
+    end
+
+    def speed
+      "#{@speed} m/s"
+    end
+
+    def direction
+      val = ((@angle/22.5) + 0.5).to_i
+      DIRECTIONS[val % 16]
+    end
+
+    def to_s
+      "#{speed} #{direction}"
+    end
+  end
+end
+
+{% endhighlight %}
+
 After removing the unneeded attr_readers the warnings went away. 
 
-Although this was really nice, I eventually turned off the warnings because I started
-getting warnings for libraries that weren't under my control:
+{% highlight ruby %}
+module Forecastr
+  class Wind
+    DIRECTIONS = ["N","NNE","NE","ENE","E","ESE", "SE", "SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"]
+
+    def initialize(speed, angle)
+      @speed = speed
+      @angle = angle
+    end
+
+    def speed
+      "#{@speed} m/s"
+    end
+
+    def direction
+      val = ((@angle/22.5) + 0.5).to_i
+      DIRECTIONS[val % 16]
+    end
+
+    def to_s
+      "#{speed} #{direction}"
+    end
+  end
+end
+
+{% endhighlight %}
+
+Although this is a nice feature of Minitest, I ended up turning it off because it started
+reporting warnings for libraries that weren't under my control:
 
 {% highlight bash %}
 /Users/ie/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/webmock-1.15.0/lib/webmock/http_lib_adapters/net_http.rb:100: warning: assigned but unused variable - response
@@ -115,26 +177,27 @@ Fabulous!
 ## The flow
 
 After migrating two classes from RSpec to Minitest, I noticed a change in my workflow.
-I was running ```rake``` to run only one test, so I had to Google how to run only a single file.
-Since I am a heavy RSpec user, running a test with the line number is one of
-the most used features of RSpec. 
+I was running ```rake```, which runs the complete suite, to run just one test. 
+The only way I could find to run a single test seems a bit too verbose for me.
+Since I am very used to RSpec, running a test with the line number is one of
+my most used features of RSpec. 
 
-In this sense, Minitest gave me a little disappointment. I mean, running a huge command
-with four arguments every time I want to run a test is a flow-killer for me. I could
-use Guard to run the test when it gets changed, but I don't want to rely on other software
-to run my tests. I want to be able to do it myself, without any hassle.
+In this sense, Minitest gave me a tiny disappointment. Running a huge command
+with four arguments every time I want to run a single test is a flow-killer. True, I could 
+use Guard to run the test when it gets changed. But also, I often want to run 
+tests by hand without any hassle. 
 
 Thanks to Nick Quaranto who wrote the [m](https://github.com/qrush/m){:target="blank"} gem. 
-The gem is quite simple - just a Test::Unit runner that can run tests by line number, 
-but it is exactly what I needed!
+The gem is quite simple - just a Test::Unit runner that can run tests by line number.
+Although simple, it is exactly what I needed!
 
-So, instead of running:
+This means that, instead of running a single test with:
 
 {% highlight bash %}
 ruby -Itest test/lib/test.rb --name /some_test/
 {% endhighlight %}
 
-I can run: 
+**m** allowes one to do the same with:
 
 {% highlight bash %}
 m test/lib/test.rb:12
@@ -152,7 +215,8 @@ easier with Minitest::Spec in the mix.
 
 My personal preference in this case was to stay away from spec expectations and 
 think more in a test assertions way. Although they are basically the same, this 
-experience was much more joyful for me. Maybe I am a bit tired of RSpec...
+experience was much more joyful for me. Or maybe I just needed to have fun with something
+new.
 
 ## Output Formatting
 
@@ -172,16 +236,17 @@ require "minitest/reporters"
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 {% endhighlight %}
 
-There are multiple built-in reporters and I went for the ```Minitest::Reporters::SpecReporter```.
+The gem has couple of built-in reporters, and I went for the ```Minitest::Reporters::SpecReporter```.
 With this gem one can also create his own reporters and formatting.
 
 ## So, what's next?
 
-Although the gem is not the biggest one, with lots of challenges in it, this was defnitely
-a really nice exercise for a hot Saturday afternoon. I with I had the chance to work
-with Fixtures and some stubbing. 
+Although Forecastr's codebase might not be big with lots of challenges in it, this was defnitely
+a really nice exercise for a hot Saturday afternoon. I just wish I had the chance to work
+with Fixtures and some fake objects. 
 
-All in all, I can definitely say that now I really enjoy using Minitest - I like it's
-simplicity. But, although simple, in my opinion it is as powerful as the other alternatives. 
+All in all, what I can say now is that using Minitest was a real joy. It seems to be 
+very simple to setup, extend and use. But, although simple, in my opinion it is 
+as powerful as the other alternatives. 
 
 You can see the whole RSpec to Minitest migration on [this commit](https://github.com/fteem/forecastr/commit/39264e419dc932f4562d622a293d920634218af6){:target="blank"}.
