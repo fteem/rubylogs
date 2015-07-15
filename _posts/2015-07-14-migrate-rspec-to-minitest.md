@@ -35,7 +35,6 @@ The purpose of the file is the same as ```spec_helper.rb``` in RSpec. Instead of
 RSpec, now I had to require:
 
 {% highlight ruby %}
-require 'minitest/unit'     # requires the unit test suite of Minitest
 require 'minitest/autorun'  # the test runner
 require 'minitest/pride'    # adds some formatting to the test output
 {% endhighlight %}
@@ -208,7 +207,7 @@ Fabulous!
 ## Minitest::Spec::DSL
 
 After getting all my tests green, I took a look at Minitest's Spec DSL. Mintest::Spec is
-a functionally complete spec engine. It works with minitest/unit and turns test assertions 
+a functionally complete spec engine. It turns the test assertions 
 into spec expectations. This basically allows the developers to use Minitest just as RSpec. 
 The syntax is pretty much the same, so migrating RSpec suite to Minitest is much much
 easier with Minitest::Spec in the mix. 
@@ -228,9 +227,8 @@ The setup is quite easy - just require the library in the ```test_helper.rb``` a
 call ```Minitest::Reporters.use!```:
 
 {% highlight ruby %}
-require 'forecastr'
+require "forecastr"
 require "minitest/autorun"
-require "minitest/unit"    
 require "minitest/reporters"
 
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
