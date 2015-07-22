@@ -6,7 +6,7 @@ tags: [angularjs, google, javascript, factory]
 
 If you don't know the basics of AngularJS service, I recommend you read the
 other article I wrote on
-[AngularJS Services Part 1: Provider](http://eftimov.net/blog/articles/2015/02/25/angularjs-services-part-1.html).
+[AngularJS Services Part 1: Provider](/2015/02/25/angularjs-services-part-1).
 
 ## Provider v.s. Factory
 

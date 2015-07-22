@@ -9,7 +9,7 @@ So, Service is basically the same as Factory, it just has one key difference.
 Service treats the function as a constructor, meaning, the service will call
 **new** on the function and return the resulting object as a service object.
 Oh, if you haven't yet read about Factory, check out
-[AngularJS Services Part 2: Factory](http://eftimov.net/blog/articles/2015/02/27/angularjs-services-part-2.html).
+[AngularJS Services Part 2: Factory](/2015/02/27/angularjs-services-part-2).
 
 ## Using Service
 
@@ -31,7 +31,7 @@ allows us to use prototype-based inheritance.
 
 ## Service in the wild
 
-I will use the same example from [my last post about Factory](http://eftimov.net/blog/articles/2015/02/27/angularjs-services-part-2.html).
+I will use the same example from [my last post about Factory](/2015/02/27/angularjs-services-part-2).
 
 {% gist f0b64471febfc9574e18 %}
 
