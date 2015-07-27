@@ -2,10 +2,12 @@
   @extend %padding-small;
   background: $brand-color;
   border-bottom: 1px solid $border-color;
+  border-top: 5px solid #c60f1b;
   display: inline-block;
   float: left;
   width: 100%;
-
+  padding-left: 20%;
+  padding-right: 20%;
   a {
     color: $header-link-color;
   }

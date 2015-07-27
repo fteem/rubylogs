@@ -1,11 +1,13 @@
 // Typography
-$font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-$font-size: 1.25em;
+/*$font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;*/
+$font-family: freight-text-pro, Georgia, serif;
+/*$font-size: 1.25em;*/
+$font-size: 18px;
 
 // Padding
 $padding-large: 20%;
-$padding-small: 5%;
-$padding-x-small: 3%;
+$padding-small: 3%;
+$padding-x-small: 1%;
 
 // Brand colours
 $brand-color: #fff;
@@ -13,7 +15,8 @@ $background-color: #fff;
 $border-color: rgba(0, 0, 0, 0.1); // rgba recommended if using feature images
 
 // Typography colours
-$text-color: #383838;
+/*$text-color: #383838;*/
+$text-color: rgba(0,0,0,0.7);
 $link-color: #c60f1b;
 $selection-color: #D4D4D4; // visible when highlighting text
 
