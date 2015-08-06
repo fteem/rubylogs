@@ -1,6 +1,9 @@
 # SITE CONFIGURATION
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://rubylogs.com" # the base hostname & protocol for your site
+title: "Ruby/Logs"
+description: "Ruby/Logs is a blog with focus on Ruby, Rails, JavaScript, Object-Oriented Design, Open Source technologies and everything in between. Authored by Ilija Eftimov" # used by search engines
+
 
 # THEME-SPECIFIC CONFIGURATION
 theme:
