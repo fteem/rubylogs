@@ -4,7 +4,7 @@ title: "Rack: Writing middleware"
 tags: [ruby, rack, middleware]
 ---
 
-Last time I wrote about [the basics of Rack](/rack-first-principles){:target="_blank"} and
+Last time I wrote about [the basics of Rack]({{site.url}}/rack-first-principles){:target="_blank"} and
 writing a tiny Rack application. If you are unsure what Rack is and what is it's purpose,
 I recommend you read the other post, famirialize yourself with Rack and get back to this
 post. If you think you know enough about Rack, please, carry on reading.
