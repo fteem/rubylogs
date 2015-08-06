@@ -5,7 +5,7 @@ tags: [rails, rack, middleware]
 ---
 
 In my last two posts about Rack, I wrote about [the basics of Rack]({{site.url}}/rack-first-principles){:target="_blank"} 
-and [how to write middleware](/writing-rack-middleware){:target="_blank"}. If you 
+and [how to write middleware]({{site.url}}/writing-rack-middleware){:target="_blank"}. If you 
 have no idea what this is about, I recommend reading the last two posts (in the order above). 
 For the rest of you, carry on - today we will see how to write awesome Rails middleware 
 and how to use it in any Rails application. Rails and Rack play together really nice, 
