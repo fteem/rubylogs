@@ -89,3 +89,10 @@ variables and allocate "space" for those variables. More specifically, set them 
 On the other hand, it's the interpreter that will follow the logical path of the program
 and see if/when ```x``` will get a value and act on it.
 
+Last but not least, if you know about hoisting in JavaScript, it's worth mentioning
+that Ruby's hoisting is much different. In Ruby every variable is available only after the line where the variable has been assigned, regardless if that line will be executed or not.
+
+<br/> <br/> <br/>
+<small>
+Update #1 - 21 Aug 2015: Article updated with Pablo Herrero's point on Ruby's v.s. JavaScript's hoisting.
+</small>
